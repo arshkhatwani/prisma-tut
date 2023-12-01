@@ -12,12 +12,20 @@ async function main() {
     // });
     // console.log(user);
 
-    const user = await prisma.user.findFirst({
-        where: {
-            name: "Sally",
+    // const user = await prisma.user.findFirst({
+    //     where: {
+    //         name: "Sally",
+    //     },
+    // });
+    // console.log(user);
+
+    const users = await prisma.user.findMany({
+        select: {
+            name: true,
         },
+        distinct: ["name"],
     });
-    console.log(user);
+    console.log(users);
 }
 
 main()
