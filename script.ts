@@ -22,8 +22,13 @@ async function main() {
     const users = await prisma.user.findMany({
         select: {
             name: true,
+            age: true,
         },
-        distinct: ["name"],
+        orderBy: {
+            age: "desc",
+        },
+        take: 2, // Limit
+        skip: 1, // Offset
     });
     console.log(users);
 }
