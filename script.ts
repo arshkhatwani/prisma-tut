@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ["query"] });
 
 async function main() {
     await prisma.user.deleteMany();
@@ -15,8 +15,12 @@ async function main() {
                 },
             },
         },
-        include: {
-            userPreference: true,
+        // include: {
+        //     userPreference: true,
+        // }, // either select or include
+        select: {
+            name: true,
+            userPreference: { select: { id: true } },
         },
     });
 
