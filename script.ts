@@ -11,14 +11,12 @@ async function main() {
     //     },
     // });
     // console.log(user);
-
     // const user = await prisma.user.findFirst({
     //     where: {
     //         name: "Sally",
     //     },
     // });
     // console.log(user);
-
     // const users = await prisma.user.findMany({
     //     select: {
     //         name: true,
@@ -31,7 +29,6 @@ async function main() {
     //     skip: 1, // Offset
     // });
     // console.log(users);
-
     // const users = await prisma.user.findMany({
     //     where: {
     //         // name: { not: "Shyam" },
@@ -45,7 +42,6 @@ async function main() {
     //     },
     // });
     // console.log(users.length);
-
     // const users = await prisma.user.findMany({
     //     where: {
     //         writtenPosts: {
@@ -62,7 +58,6 @@ async function main() {
     //     }
     // })
     // console.log(users);
-
     // const users = await prisma.post.findMany({
     //     where: {
     //         author: {
@@ -73,6 +68,58 @@ async function main() {
     //     },
     // });
     // console.log(users);
+    // const user = await prisma.user.update({
+    //     where: {
+    //         email: "sally@test2.com",
+    //     },
+    //     data: {
+    //         email: "sally@test3.com",
+    //     },
+    // });
+    // console.log(user);
+    // const user = await prisma.user.update({
+    //     where: {
+    //         name: 'Kyle',
+    //         email: "kyle@test.com"
+    //     },
+    //     data: {
+    //         userPreference:{
+    //             connect: {
+    //                 id: '19051123-4ff1-4045-962b-76d96f83e1d0'
+    //             }
+    //         }
+    //     }
+    // });
+    // console.log(user)
+    // const user = await prisma.user.findFirst({
+    //     where: {
+    //         name: "Kyle",
+    //     },
+    //     include: {
+    //         userPreference: true,
+    //     },
+    // });
+    // console.log(user);
+    // const user = await prisma.user.update({
+    //     where: {
+    //         name: "Kyle",
+    //         email: "kyle@test.com",
+    //     },
+    //     data: {
+    //         userPreference: {
+    //             disconnect: true,
+    //         },
+    //     },
+    // });
+    // console.log(user);
+    // const user = await prisma.user.delete({
+    //     where: {
+    //         email: 'kyle@test.com'
+    //     }
+    // });
+    // console.log(user)
+    // await prisma.user.deleteMany();
+    // await prisma.userPreference.deleteMany();
 }
 
 main()
