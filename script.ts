@@ -32,19 +32,47 @@ async function main() {
     // });
     // console.log(users);
 
-    const users = await prisma.user.findMany({
-        where: {
-            // name: { not: "Shyam" },
-            // name: { in: ["Kyle", "Sally"] },
-            // name: { notIn: ["Kyle", "Sally"] },
-            // age: { lt: 20 },
-            // email: { contains: "@test.com" },
-            // email: { endsWith: "@abc.com" },
-            // email: { startsWith: "shyam" },
-            email: { startsWith: "shyam" },
-        },
-    });
-    console.log(users.length);
+    // const users = await prisma.user.findMany({
+    //     where: {
+    //         // name: { not: "Shyam" },
+    //         // name: { in: ["Kyle", "Sally"] },
+    //         // name: { notIn: ["Kyle", "Sally"] },
+    //         // age: { lt: 20 },
+    //         // email: { contains: "@test.com" },
+    //         // email: { endsWith: "@abc.com" },
+    //         // email: { startsWith: "shyam" },
+    //         email: { startsWith: "shyam" },
+    //     },
+    // });
+    // console.log(users.length);
+
+    // const users = await prisma.user.findMany({
+    //     where: {
+    //         writtenPosts: {
+    //             // every: {
+    //             //     title: 'Test'
+    //             // },
+    //             // some: {
+    //             //     title: 'Test'
+    //             // },
+    //             none: {
+    //                 title: 'Test'
+    //             }
+    //         }
+    //     }
+    // })
+    // console.log(users);
+
+    // const users = await prisma.post.findMany({
+    //     where: {
+    //         author: {
+    //             is: {
+    //                 age: 27
+    //             }
+    //         }
+    //     },
+    // });
+    // console.log(users);
 }
 
 main()
